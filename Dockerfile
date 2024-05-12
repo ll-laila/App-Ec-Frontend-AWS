@@ -4,8 +4,6 @@ FROM node:alpine3.18 as build
 
 # Declare build time environment variables
 ARG REACT_APP_SERVER_BASE_URL
-
-# Set default values for environment variables
 ENV REACT_APP_SERVER_BASE_URL=$REACT_APP_SERVER_BASE_URL
 
 
