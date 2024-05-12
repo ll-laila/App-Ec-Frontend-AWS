@@ -4,9 +4,11 @@ FROM node:alpine3.18 as build
 # Build App
 WORKDIR /app
 COPY package.json .
-RUN npm install
+#RUN npm install
+RUN RUN npm install --force
 COPY . .
 RUN npm run build
+
 
 # Serve with Nginx
 FROM nginx:1.23-alpine
