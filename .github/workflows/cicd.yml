@@ -12,19 +12,19 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v4
       - name: Login to docker hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
+        run: sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}     
       - name: Build Docker Image
-        run: docker build -t laila22/react-app .
+        run: sudo docker build -t laila22/react-app .
       - name: Publish Image to docker hub
-        run: docker push laila22/react-app:latest 
+        run: sudo docker push laila22/react-app:latest 
  
   deploy:
     needs: build
     runs-on: self-hosted 
     steps:
       - name: Pull image from docker hub
-        run: docker pull laila22/react-app:latest 
+        run: sudo docker pull laila22/react-app:latest 
       - name: Delete old container
-        run: docker rm -f react-app-container
+        run: sudo docker rm -f react-app-container
       - name: Run Docker Container
-        run: docker run -d -p 3000:80 --name react-app-container laila22/react-app
+        run: sudo docker run -d -p 3000:80 --name react-app-container laila22/react-app
