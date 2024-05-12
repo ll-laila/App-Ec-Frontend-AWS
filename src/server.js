@@ -1,2 +1,2 @@
-export const server = "http://localhost:8000/api/v2";
+export const server = "http://16.170.236.85:4000/api/v2";
 

@@ -4,8 +4,7 @@ FROM node:alpine3.18 as build
 # Build App
 WORKDIR /app
 COPY package.json .
-#RUN npm install
-RUN RUN npm install --force
+RUN npm install -g npm@!0.4.0
 COPY . .
 RUN npm run build
 
