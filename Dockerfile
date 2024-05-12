@@ -1,7 +1,6 @@
+# Build Stage
 FROM node:alpine3.18 as build
 
-
-# Build App
 WORKDIR /app
 COPY package.json .
 RUN npm install -g npm@10.4.0
@@ -10,16 +9,11 @@ RUN npm install -g npm@10.4.0
 RUN npm install -g react-scripts@latest
 
 COPY . .
-EXPOSE 80
+RUN npm run build
 
-# Start nginx server
-CMD ["nginx", "-g", "daemon off;"]
-
-
-
-
-# Serve with Nginx
+# Nginx Stage
 FROM nginx:1.23-alpine
+
 WORKDIR /usr/share/nginx/html
 RUN rm -rf *
 COPY --from=build /app/build .
