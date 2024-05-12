@@ -41,7 +41,7 @@ const ActivationPage = () => {
       ) : (
         <p>Votre compte a été créé avec succès !</p>
       )}
-    </div>
+    </div> 
   );
 };
 
