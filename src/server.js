@@ -1,2 +1,1 @@
-export const server = "http://16.170.236.85:4000/api/v2";
-
+export const server = process.env.REACT_APP_SERVER_BASE_URL;
