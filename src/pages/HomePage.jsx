@@ -7,12 +7,11 @@ import BestEvent from "../components/Events/BestEvent";
 import FeaturedProduct from "../components/Route/FeaturedProduct/FeaturedProduct";
 import Sponsored from "../components/Route/Sponsored";
 import Footer from "../components/Layout/Footer";
-import VoiceflowWidget from "../components/VoiceflowWidget";
 
 const HomePage = () => {
   return (
     <div>
-      <Header activeHea
+      <Header activeHeading={1} />
       <Hero />
       <Categories />
       <BestDeals />  
@@ -20,7 +19,6 @@ const HomePage = () => {
       <FeaturedProduct />
       <Sponsored />
       <Footer />
-      <VoiceflowWidget/>
     </div>
   )
 }
