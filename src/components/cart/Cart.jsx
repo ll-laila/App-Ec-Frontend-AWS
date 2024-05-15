@@ -141,7 +141,7 @@ const CartSingle = ({ data, quantityChangeHandler, removeFromCartHandler }) => {
           </h4>
           <h4 className="font-[600] text-[17px] pt-[3px] text-[#d02222] font-Roboto">
             {totalPrice} $
-          </h4>
+          </h4>  
         </div>
         <div className="pl-6">
           <RxCross1
