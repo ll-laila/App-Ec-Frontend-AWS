@@ -10,7 +10,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 const AllRefundOrders = () => {
   const { orders, isLoading } = useSelector((state) => state.order);
   const { seller } = useSelector((state) => state.seller);
-
+   
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const AllRefundOrders = () => {
       row.push({
         id: item._id,
         itemsQty: item.cart.length,
-        total: "US$ " + item.totalPrice,
+        total:  item.totalPrice + " $",
         status: item.status,
       });
     });

@@ -21,7 +21,7 @@ const AllProducts = () => {
   const handleDelete = (id) => {
     dispatch(deleteProduct(id));
     window.location.reload();
-    toast.success('Produit créé avec succès !');
+    toast.success('Produit supprimer avec succès !');
   };
 
   const columns = [

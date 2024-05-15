@@ -12,7 +12,7 @@ import Footer from "../components/Layout/Footer";
 const HomePage = () => {
 
 
-
+  // chatBot via voiceflow
   useEffect(() => {
     const loadVoiceflowWidget = () => {
       const script = document.createElement('script');
