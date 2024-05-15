@@ -9,7 +9,7 @@ export const addTocart = (data) => async (dispatch, getState) => {
   return data;
 };
  
-// remove from cart
+// supprimer cart
 export const removeFromCart = (data) => async (dispatch, getState) => {
   dispatch({
     type: "removeFromCart",
