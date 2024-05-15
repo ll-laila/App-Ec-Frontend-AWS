@@ -1,1 +1,1 @@
-# App-ec-Front-end-AWS
+# App-ec-Frontend-AWS
