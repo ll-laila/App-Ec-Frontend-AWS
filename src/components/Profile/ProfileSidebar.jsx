@@ -11,7 +11,7 @@ import { RxPerson } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server";
-
+import { Login } from "../Login/Login";
 import { useSelector } from "react-redux";
 
 const ProfileSidebar = ({ setActive, active }) => {
@@ -22,8 +22,8 @@ const ProfileSidebar = ({ setActive, active }) => {
     axios
       .get(`${server}/user/logout`, { withCredentials: true })
       .then((res) => {
-        navigate("/login");
         window.location.reload(true);
+        return <Login/>;
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -154,7 +154,8 @@ const ProfileSidebar = ({ setActive, active }) => {
           </div>
         </Link>
       )} 
-
+ 
+  <Link to="/">
       <div
         className="single_item flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(9) || logoutHandler()}
@@ -168,6 +169,7 @@ const ProfileSidebar = ({ setActive, active }) => {
               Se déconnecter
         </span>
       </div>
+    </Link>
     </div>
   );
 };

@@ -1,10 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { brandingData, categoriesData } from "../../../static/data";
 import styles from "../../../styles/styles";
+import { Redirect } from "react-router-dom";
 
 const Categories = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className={`${styles.section} hidden sm:block shadow-lg`}>
@@ -32,8 +31,9 @@ const Categories = () => {
           {categoriesData &&
             categoriesData.map((i) => {
               const handleSubmit = (i) => {
-                navigate(`/products?category=${i.title}`);
+                return <Redirect to={`/products?category=${i.title}`} />;
               };
+
               return (
                 <div
                   className="w-full h-[100px] flex items-center justify-between cursor-pointer overflow-hidden"

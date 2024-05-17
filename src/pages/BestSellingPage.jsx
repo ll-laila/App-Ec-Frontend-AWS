@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
 import Header from "../components/Layout/Header";
 import Loader from "../components/Layout/Loader";
 import ProductCard from "../components/Route/ProductCard/ProductCard";
@@ -15,8 +14,9 @@ const BestSellingPage = () => {
     const allProductsData = allProducts ? [...allProducts] : [];
     const sortedData = allProductsData?.sort((a,b) => b.sold_out - a.sold_out); 
     const first = sortedData && sortedData.slice(0, 10);
-    setData(first);
+    setData(first); 
   }, [allProducts]);
+
 
   return (
    <>

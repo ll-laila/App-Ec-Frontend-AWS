@@ -37,6 +37,7 @@ const OrderDetails = () => {
       .then((res) => {
         navigate("/dashboard-orders");
         toast.success("Commande mise à jour !");
+        
       })
       .catch((error) => {
         toast.error(error.response.data.message);

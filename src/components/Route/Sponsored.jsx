@@ -26,7 +26,7 @@ const Sponsored = () => {
         </div> 
         <div className="flex items-start">
           <img
-            src="https://www.vectorlogo.zone/logos/apple/apple-ar21.png"
+            src="https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.png"
             style={{width:"150px", objectFit:"contain"}}
             alt=""
           />

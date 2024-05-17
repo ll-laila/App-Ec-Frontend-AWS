@@ -288,12 +288,6 @@ const PaymentInfo = ({
 const CartData = ({ orderData}) => {
   const shipping = orderData?.shipping?.toFixed(2);
 
-  const [amountMAD,setAmountMAD] = useState(0)
-  
-  useEffect(() => {
-    const exchangeRate = 10.0; // Taux de change USD vers MAD
-    setAmountMAD(orderData?.totalPrice * exchangeRate);
-  }, []);
 
   return (
     <div className="w-full bg-[#fff] rounded-md p-5 pb-8">
@@ -318,7 +312,7 @@ const CartData = ({ orderData}) => {
       <h5 className="text-[18px] font-[600] text-end pt-3">
         {orderData?.totalPrice} $
       </h5>
-      <h5 className="text-[18px] font-[600] text-end pt-3">{amountMAD} MAD</h5>
+      <h5 className="text-[18px] font-[600] text-end pt-3">{(orderData?.totalPrice) * 10.0} MAD</h5>
     </div>
   );
 };

@@ -9,11 +9,11 @@ const BestDeals = () => {
 
   useEffect(() => {
     const allProductsData = allProducts ? [...allProducts] : [];
-    const sortedData = allProductsData?.sort((a, b) => b.sold_out - a.sold_out);
-    sortedData.sort(() => Math.random() - 9.9);
+    const sortedData = allProductsData?.sort((a,b) => b.sold_out - a.sold_out); 
     const first = sortedData && sortedData.slice(0, 5);
-    setData(first);
+    setData(first); 
   }, [allProducts]);
+
 
   return (
     <div>
@@ -25,6 +25,7 @@ const BestDeals = () => {
           {data && data.map((i, index) => <ProductCard data={i} key={index} />)}
         </div>
       </div>
+      
     </div>
   );
 };
