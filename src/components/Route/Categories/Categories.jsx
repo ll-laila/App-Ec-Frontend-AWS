@@ -1,7 +1,7 @@
 import React from "react";
 import { brandingData, categoriesData } from "../../../static/data";
 import styles from "../../../styles/styles";
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
@@ -30,15 +30,11 @@ const Categories = () => {
         <div className="grid grid-cols-1 gap-[5px] md:grid-cols-2 md:gap-[10px] lg:grid-cols-4 lg:gap-[20px] xl:grid-cols-5 xl:gap-[30px]">
           {categoriesData &&
             categoriesData.map((i) => {
-              const handleSubmit = (i) => {
-                return <Redirect to={`/products?category=${i.title}`} />;
-              };
-
               return (
-                <div
-                  className="w-full h-[100px] flex items-center justify-between cursor-pointer overflow-hidden"
+                <Link
+                  to={`/products?category=${i.title}`}
                   key={i.id}
-                  onClick={() => handleSubmit(i)}
+                  className="w-full h-[100px] flex items-center justify-between cursor-pointer overflow-hidden"
                 >
                   <h5 className={`text-[18px] leading-[1.3]`}>{i.title}</h5>
                   <img
@@ -46,7 +42,7 @@ const Categories = () => {
                     className="w-[120px] object-cover"
                     alt=""
                   />
-                </div>
+                </Link>
               );
             })}
         </div>
