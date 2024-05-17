@@ -12,6 +12,8 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
+
 
 const ProfileSidebar = ({ setActive, active }) => {
   const navigate = useNavigate();
@@ -21,8 +23,8 @@ const ProfileSidebar = ({ setActive, active }) => {
     axios
       .get(`${server}/user/logout`, { withCredentials: true })
       .then((res) => {
-        navigate("/");
         window.location.reload(true);
+        toast.success("Déconnexion réussie !");
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -153,8 +155,8 @@ const ProfileSidebar = ({ setActive, active }) => {
           </div>
         </Link>
       )} 
- 
-  <Link to="/">
+
+  <Link to="/login">
       <div
         className="single_item flex items-center cursor-pointer w-full mb-8"
         onClick={() => setActive(9) || logoutHandler()}

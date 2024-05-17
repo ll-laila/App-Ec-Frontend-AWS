@@ -25,9 +25,9 @@ const ShopLogin = () => {
         { withCredentials: true }
       )
       .then((res) => {   
-        window.location.reload(true);
         toast.success("Connexion réussie !");
-        return <ShopHomePage/>;
+        // Rediriger l'utilisateur vers la page ShopInfo
+        window.location.href = "/shop-info";
       })
       .catch((err) => {
         toast.error(err.response.data.message);

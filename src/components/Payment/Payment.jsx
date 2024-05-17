@@ -106,10 +106,11 @@ const Payment = () => {
       .post(`${server}/order/create-order`, order, config)
       .then((res) => {
         setOpen(false);
-        navigate("/order/success");
+       // navigate("/order/success");
         localStorage.setItem("cartItems", JSON.stringify([]));
         localStorage.setItem("latestOrder", JSON.stringify([]));
-        window.location.reload();
+        window.location.href = "/order/success";
+        //window.location.reload();
       });
   };
 
