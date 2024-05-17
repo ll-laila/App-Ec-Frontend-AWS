@@ -5,13 +5,13 @@ import { Link , useNavigate} from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
-import ShopHomePage from "../../pages/Shop/ShopHomePage";
+import { Navigate } from "react-router-dom";
+
 
 const ShopLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,8 +26,9 @@ const ShopLogin = () => {
         { withCredentials: true }
       )
       .then((res) => {   
-        navigate("/dashboard");
         toast.success("Connexion réussie !");
+        return <Navigate to={`/dashboard`} replace />
+      
       })
       .catch((err) => {
         toast.error(err.response.data.message);
