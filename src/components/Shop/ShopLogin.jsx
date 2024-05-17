@@ -12,6 +12,7 @@ const ShopLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const ShopLogin = () => {
       )
       .then((res) => {   
         toast.success("Connexion réussie !");
-        return <Navigate to={`/dashboard`} replace />
+       navigate("/dashboard"); 
       
       })
       .catch((err) => {
